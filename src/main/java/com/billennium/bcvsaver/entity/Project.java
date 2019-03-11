@@ -23,4 +23,7 @@ public class Project {
 
     @ManyToMany(mappedBy = "projects")
     private Set<Technology> technologies = new HashSet<>();
+
+    @ManyToOne
+    private Cv cv;
 }

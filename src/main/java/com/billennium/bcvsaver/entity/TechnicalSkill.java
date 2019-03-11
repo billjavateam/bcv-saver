@@ -17,8 +17,11 @@ public class TechnicalSkill {
     private Set<Technology> technologies = new HashSet<>();
 
     // it can be values like 1.5
-    private Float expInYears;
+    private Double expInYears;
 
     // it will be enum 1-5
-    private int lvlOfKnowledge;
+    private Integer lvlOfKnowledge;
+
+    @ManyToOne
+    private Cv cv;
 }

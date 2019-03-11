@@ -22,7 +22,7 @@ public class Technology {
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(
-            name = "Technology_TechnicallSkill",
+            name = "Technology_TechnicalSkill",
             joinColumns = { @JoinColumn(name = "technology_id") },
             inverseJoinColumns = { @JoinColumn(name = "technical_skill_id") }
     )

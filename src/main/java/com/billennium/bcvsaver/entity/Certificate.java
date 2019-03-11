@@ -17,4 +17,7 @@ public class Certificate {
 
     @Basic
     private Date date;
+
+    @ManyToOne
+    private Cv cv;
 }

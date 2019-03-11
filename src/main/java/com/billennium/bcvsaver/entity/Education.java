@@ -4,7 +4,6 @@ import lombok.Data;
 
 import javax.persistence.*;
 import java.sql.Date;
-import java.time.LocalDate;
 
 @Entity
 @Data
@@ -23,4 +22,7 @@ public class Education {
     @Basic
     @Column(nullable = false)
     private Date to;
+
+    @ManyToOne
+    private Cv cv;
 }
