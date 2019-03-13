@@ -1,5 +1,6 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import java.sql.Date;
 
 @Entity
 @Data
+@Builder
 public class Education {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

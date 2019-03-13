@@ -1,5 +1,6 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -7,6 +8,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Builder
 public class Technology {
     @Id
     @Column(unique = true)

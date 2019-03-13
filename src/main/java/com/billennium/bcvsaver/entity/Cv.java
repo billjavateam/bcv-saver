@@ -1,5 +1,6 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.List;
 
 @Entity
 @Data
+@Builder
 public class Cv {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -17,21 +19,21 @@ public class Cv {
     private String cvLanguage;
 
     @ManyToOne
-    @Column(nullable = false)
+    // @Column(nullable = false)
     private User user;
 
-    @OneToMany(mappedBy = "education")
+    @OneToMany(mappedBy = "education", cascade = CascadeType.PERSIST)
     private List<Education> educations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "technicalSkill")
+    @OneToMany(mappedBy = "technicalSkill", cascade = CascadeType.PERSIST)
     private List<TechnicalSkill> technicalSkills = new ArrayList<>();
 
-    @OneToMany(mappedBy = "project")
+    @OneToMany(mappedBy = "project", cascade = CascadeType.PERSIST)
     private List<Project> projects = new ArrayList<>();
 
-    @OneToMany(mappedBy = "language")
+    @OneToMany(mappedBy = "language", cascade = CascadeType.PERSIST)
     private List<Language> languages = new ArrayList<>();
 
-    @OneToMany(mappedBy = "certificate")
+    @OneToMany(mappedBy = "certificate", cascade = CascadeType.PERSIST)
     private List<Certificate> certificates = new ArrayList<>();
 }

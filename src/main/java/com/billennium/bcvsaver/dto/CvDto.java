@@ -1,6 +1,7 @@
 package com.billennium.bcvsaver.dto;
 
 import lombok.Data;
+import lombok.Getter;
 
 import java.util.List;
 
@@ -8,9 +9,9 @@ import java.util.List;
 public class CvDto {
     private String cvLanguage;
 
-    private List<EducationDto> educationDtos;
-    private List<ProjectDto> projectDtos;
-    private List<TechnicalSkillDto> technicalSkillDtos;
-    private List<String> languages;
-    private List<CertificateDto> certificateDtos;
+    private List<EducationDto> educations;
+    private List<ProjectDto> projects;
+    private List<TechnicalSkillDto> technicalSkills;
+    private List<String> languagesLevel;
+    private List<CertificateDto> certificates;
 }

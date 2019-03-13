@@ -1,5 +1,6 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,6 +9,7 @@ import java.util.Set;
 
 @Entity
 @Data
+@Builder
 public class Project {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
