@@ -4,7 +4,6 @@ import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.Date;
 
 @Entity
 @Data
@@ -18,8 +17,9 @@ public class Certificate {
     private String name;
 
     @Basic
-    private Date date;
+    private String date;
 
     @ManyToOne
+    @JoinColumn(name="cv_id")
     private Cv cv;
 }

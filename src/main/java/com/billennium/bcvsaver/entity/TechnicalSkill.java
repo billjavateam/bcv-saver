@@ -25,5 +25,6 @@ public class TechnicalSkill {
     private Integer lvlOfKnowledge;
 
     @ManyToOne
+    @JoinColumn(name="cv_id")
     private Cv cv;
 }

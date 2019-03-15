@@ -17,6 +17,6 @@ public class Language {
     private String level;
 
     @ManyToOne
+    @JoinColumn(name="cv_id")
     private Cv cv;
-
 }

@@ -13,12 +13,12 @@ public class Experience {
     private Long id;
 
     @Basic
-    @Column(nullable = false)
-    private Date from;
+    //@Column(nullable = false)
+    private String dateFrom;
 
     @Basic
-    @Column(nullable = false)
-    private Date to;
+    //@Column(nullable = false)
+    private String dateTo;
 
     private Boolean isWorking;
 

@@ -18,13 +18,14 @@ public class Education {
     private String name;
 
     @Basic
-    @Column(nullable = false)
-    private Date from;
+    //@Column(nullable = false)
+    private String dateFrom;
 
     @Basic
-    @Column(nullable = false)
-    private Date to;
+    //@Column(nullable = false)
+    private String dateTo;
 
     @ManyToOne
+    @JoinColumn(name="cv_id")
     private Cv cv;
 }

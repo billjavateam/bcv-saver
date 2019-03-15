@@ -27,5 +27,6 @@ public class Project {
     private Set<Technology> technologies = new HashSet<>();
 
     @ManyToOne
+    @JoinColumn(name="cv_id")
     private Cv cv;
 }

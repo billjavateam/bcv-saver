@@ -5,7 +5,8 @@ import lombok.Data;
 
 import java.sql.Date;
 
-@Data public class CertificateDto {
+@Data
+public class CertificateDto {
     private String name;
-    private Date date;
+    private String date;
 }
