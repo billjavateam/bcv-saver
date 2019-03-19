@@ -1,17 +1,18 @@
 package com.billennium.bcvsaver.asm;
 
+import com.billennium.bcvsaver.dto.CvDependencyDto;
 import com.billennium.bcvsaver.dto.CvDto;
 import com.billennium.bcvsaver.entity.Cv;
 
 public class CvAsm {
-    public static Cv makeCv(CvDto cvDto) {
+    public static Cv makeCv(CvDto cvDto, CvDependencyDto cvDependency) {
         return Cv.builder()
                 .cvLanguage(cvDto.getCvLanguage())
-                .educations(EducationAsm.makeEducations(cvDto.getEducations()))
-                .technicalSkills(TechnicalSkillAsm.makeTechnicalSkills(cvDto.getTechnicalSkills()))
-                .certificates(CertificateAsm.makeCertificates(cvDto.getCertificates()))
-                .languages(LanguageAsm.makeLanguages(cvDto.getLanguagesLevel()))
-                .projects(ProjectAsm.makeProjects(cvDto.getProjects()))
+                .educations(cvDependency.getEducations())
+                .technicalSkills(cvDependency.getTechnicalSkills())
+                .certificates(cvDependency.getCertificates())
+                .languages(cvDependency.getLanguages())
+                .projects(cvDependency.getProjects())
                 .build();
     }
 }

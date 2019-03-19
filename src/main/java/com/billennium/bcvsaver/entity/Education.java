@@ -24,8 +24,4 @@ public class Education {
     @Basic
     //@Column(nullable = false)
     private String dateTo;
-
-    @ManyToOne
-    @JoinColumn(name="cv_id")
-    private Cv cv;
 }

@@ -22,12 +22,10 @@ public class CertificateService {
     }
 
     private Certificate addCertificate(CertificateDto certificateDto) {
-        Certificate certificate = CertificateAsm.makeCertificate(certificateDto);
-        certificateRepository.save(certificate);
-        return certificate;
+        return certificateRepository.save(CertificateAsm.makeCertificate(certificateDto));
     }
 
-    public List<Certificate> addCertificates(List<CertificateDto> certificateDtos) {
+    List<Certificate> addCertificates(List<CertificateDto> certificateDtos) {
         return Optional.ofNullable(certificateDtos).orElse(List.of())
                 .stream()
                 .filter(Objects::nonNull)

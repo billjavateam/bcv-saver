@@ -1,6 +1,7 @@
 package com.billennium.bcvsaver.service;
 
 import com.billennium.bcvsaver.asm.CvAsm;
+import com.billennium.bcvsaver.dto.CvDependencyDto;
 import com.billennium.bcvsaver.dto.CvDto;
 import com.billennium.bcvsaver.entity.Cv;
 import com.billennium.bcvsaver.repository.CvRepository;
@@ -30,13 +31,18 @@ public class CvService {
 
     @Transactional
     public CvDto addCv(CvDto cvDto) {
-        addDependencies(cvDto);
-        Cv cv = CvAsm.makeCv(cvDto);
+        Cv cv = CvAsm.makeCv(cvDto, addDependencies(cvDto));
         cvRepository.save(cv);
         return cvDto;
     }
 
-    private void addDependencies(CvDto cvDto) {
-
+    private CvDependencyDto addDependencies(CvDto cvDto) {
+        return CvDependencyDto.builder()
+                .certificates(certificateService.addCertificates(cvDto.getCertificates()))
+                .educations(educationService.addEducations(cvDto.getEducations()))
+                .languages(languageService.addLanguages(cvDto.getLanguageDtos()))
+                .projects(projectService.addProjects(cvDto.getProjects()))
+                .technicalSkills(technicalSkillService.addTechnicalSkills(cvDto.getTechnicalSkills()))
+                .build();
     }
 }

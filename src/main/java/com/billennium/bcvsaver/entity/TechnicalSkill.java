@@ -23,8 +23,4 @@ public class TechnicalSkill {
 
     // it will be enum 1-5
     private Integer lvlOfKnowledge;
-
-    @ManyToOne
-    @JoinColumn(name="cv_id")
-    private Cv cv;
 }

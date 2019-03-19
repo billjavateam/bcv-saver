@@ -26,7 +26,7 @@ public class Project {
     @ManyToMany(mappedBy = "projects")
     private Set<Technology> technologies = new HashSet<>();
 
-    @ManyToOne
-    @JoinColumn(name="cv_id")
-    private Cv cv;
+    //@ManyToOne
+    //@JoinColumn(name="cv_id")
+    //private Cv cv;
 }

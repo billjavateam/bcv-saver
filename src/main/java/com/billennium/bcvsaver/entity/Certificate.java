@@ -18,8 +18,4 @@ public class Certificate {
 
     @Basic
     private String date;
-
-    @ManyToOne
-    @JoinColumn(name="cv_id")
-    private Cv cv;
 }

@@ -12,6 +12,6 @@ public class CvDto {
     private List<EducationDto> educations;
     private List<ProjectDto> projects;
     private List<TechnicalSkillDto> technicalSkills;
-    private List<String> languagesLevel;
+    private List<LanguageDto> languageDtos;
     private List<CertificateDto> certificates;
 }

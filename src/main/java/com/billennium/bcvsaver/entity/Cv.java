@@ -22,18 +22,18 @@ public class Cv {
     // @Column(nullable = false)
     private User user;
 
-    @OneToMany(mappedBy = "cv", cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Education> educations = new ArrayList<>();
 
-    @OneToMany(mappedBy = "cv", cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<TechnicalSkill> technicalSkills = new ArrayList<>();
 
-    @OneToMany(mappedBy = "cv", cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Project> projects = new ArrayList<>();
 
-    @OneToMany(mappedBy = "cv", cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Language> languages = new ArrayList<>();
 
-    @OneToMany(mappedBy = "cv", cascade = CascadeType.PERSIST)
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Certificate> certificates = new ArrayList<>();
 }
