@@ -27,6 +27,9 @@ public class Cv {
     private List<Education> educations = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL)
+    private List<Experience> experiences = new ArrayList<>();
+
+    @OneToMany(cascade = CascadeType.ALL)
     private List<TechnicalSkill> technicalSkills = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL)

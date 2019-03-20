@@ -17,15 +17,9 @@ public class Education {
     @Column(nullable = false)
     private String name;
 
-    // TODO
-    // it should be Date later
     @Basic
-    //@Column(nullable = false)
-    private String dateFrom;
+    private Date dateFrom;
 
-    // TODO
-    // it should be Date later
     @Basic
-    //@Column(nullable = false)
-    private String dateTo;
+    private Date dateTo;
 }

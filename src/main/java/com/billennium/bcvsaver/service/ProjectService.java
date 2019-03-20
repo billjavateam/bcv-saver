@@ -21,7 +21,6 @@ public class ProjectService {
         this.projectRepository = projectRepository;
     }
 
-
     List<Project> addProjects(List<ProjectDto> projectDtos) {
         return Optional.ofNullable(projectDtos).orElse(List.of())
                 .stream()

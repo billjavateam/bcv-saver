@@ -2,12 +2,12 @@ package com.billennium.bcvsaver.dto;
 
 import lombok.Data;
 
-import java.util.Date;
+import java.sql.Date;
 
 @Data
 public class ExperienceDto {
-    private String from;
-    private String to;
-    private boolean isWorking;
+    private Date dateFrom;
+    private Date dateTo;
+    private Boolean isWorking;
     private String Position;
 }

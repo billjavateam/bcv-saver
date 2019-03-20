@@ -7,6 +7,6 @@ import java.sql.Date;
 @Data
 public class EducationDto {
     private String name;
-    private String dateFrom;
-    private String dateTo;
+    private Date dateFrom;
+    private Date dateTo;
 }

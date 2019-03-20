@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
-import java.util.List;
-import java.util.stream.Stream;
 
 @Service
 public class CvService {
@@ -20,15 +18,19 @@ public class CvService {
     private final LanguageService languageService;
     private final ProjectService projectService;
     private final TechnicalSkillService technicalSkillService;
+    private final ExperienceService experienceService;
 
     @Autowired
-    public CvService(CvRepository cvRepository, CertificateService certificateService, EducationService educationService, LanguageService languageService, ProjectService projectService, TechnicalSkillService technicalSkillService) {
+    public CvService(CvRepository cvRepository, CertificateService certificateService,
+                     EducationService educationService, LanguageService languageService, ProjectService projectService,
+                     TechnicalSkillService technicalSkillService, ExperienceService experienceService) {
         this.cvRepository = cvRepository;
         this.certificateService = certificateService;
         this.educationService = educationService;
         this.languageService = languageService;
         this.projectService = projectService;
         this.technicalSkillService = technicalSkillService;
+        this.experienceService = experienceService;
     }
 
     @Transactional
@@ -45,6 +47,7 @@ public class CvService {
                 .languages(languageService.addLanguages(cvDto.getLanguageDtos()))
                 .projects(projectService.addProjects(cvDto.getProjects()))
                 .technicalSkills(technicalSkillService.addTechnicalSkills(cvDto.getTechnicalSkills()))
+                .experiences(experienceService.addExperiences(cvDto.getExperiences()))
                 .build();
     }
 }

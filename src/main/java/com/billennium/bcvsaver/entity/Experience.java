@@ -1,5 +1,6 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -7,22 +8,17 @@ import java.sql.Date;
 
 @Entity(name = "experience")
 @Data
+@Builder
 public class Experience {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // TODO
-    // it should be Date later
     @Basic
-    //@Column(nullable = false)
-    private String dateFrom;
+    private Date dateFrom;
 
-    // TODO
-    // it should be Date later
     @Basic
-    //@Column(nullable = false)
-    private String dateTo;
+    private Date dateTo;
 
     private Boolean isWorking;
 

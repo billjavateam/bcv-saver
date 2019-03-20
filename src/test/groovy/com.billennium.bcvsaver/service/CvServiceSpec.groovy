@@ -12,11 +12,11 @@ class CvServiceSpec extends Specification {
     def languageService = Mock(LanguageService)
     def projectService = Mock(ProjectService)
     def technicalSkillService = Mock(TechnicalSkillService)
-
+    def experienceService = Mock(ExperienceService)
     def "should create cv service"() {
         when:
         def cvService = new CvService(cvRepository, certificateService, educationService,
-                languageService, projectService, technicalSkillService)
+                languageService, projectService, technicalSkillService, experienceService)
         then:
         cvService != null
     }

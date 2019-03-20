@@ -15,4 +15,5 @@ public class CvDependencyDto {
     private List<Project> projects = new ArrayList<>();
     private List<Language> languages = new ArrayList<>();
     private List<Certificate> certificates = new ArrayList<>();
+    private List<Experience> experiences = new ArrayList<>();
 }
