@@ -5,7 +5,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-@Entity
+@Entity(name = "language")
 @Data
 @Builder
 public class Language {
@@ -15,6 +15,7 @@ public class Language {
 
     private String name;
 
+    // TODO
     // it will be enum later
     private String level;
 }

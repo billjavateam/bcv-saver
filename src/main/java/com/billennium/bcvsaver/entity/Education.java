@@ -6,7 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.sql.Date;
 
-@Entity
+@Entity(name = "education")
 @Data
 @Builder
 public class Education {
@@ -17,10 +17,14 @@ public class Education {
     @Column(nullable = false)
     private String name;
 
+    // TODO
+    // it should be Date later
     @Basic
     //@Column(nullable = false)
     private String dateFrom;
 
+    // TODO
+    // it should be Date later
     @Basic
     //@Column(nullable = false)
     private String dateTo;

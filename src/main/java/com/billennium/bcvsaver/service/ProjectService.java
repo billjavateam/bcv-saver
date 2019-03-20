@@ -28,7 +28,6 @@ public class ProjectService {
                 .filter(Objects::nonNull)
                 .map(this::addProject)
                 .collect(Collectors.toList());
-
     }
 
     private Project addProject(ProjectDto projectDto) {

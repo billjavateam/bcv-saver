@@ -7,7 +7,7 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name = "cv")
 @Data
 @Builder
 public class Cv {
@@ -15,6 +15,7 @@ public class Cv {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    // TODO
     // it could be enum type later
     private String cvLanguage;
 

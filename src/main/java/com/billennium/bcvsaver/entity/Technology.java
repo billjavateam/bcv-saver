@@ -6,7 +6,7 @@ import lombok.Data;
 import javax.persistence.*;
 import java.util.Set;
 
-@Entity
+@Entity(name = "technology")
 @Data
 @Builder
 public class Technology {
