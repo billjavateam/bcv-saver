@@ -4,6 +4,8 @@ import com.billennium.bcvsaver.dto.CvDependencyDto;
 import com.billennium.bcvsaver.dto.CvDto;
 import com.billennium.bcvsaver.entity.Cv;
 
+import java.util.List;
+
 public class CvAsm {
     public static Cv makeCv(CvDto cvDto, CvDependencyDto cvDependency) {
         return Cv.builder()
