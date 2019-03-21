@@ -1,7 +1,7 @@
 package com.billennium.bcvsaver.controller;
 
 import com.billennium.bcvsaver.dto.CvDto;
-import com.billennium.bcvsaver.service.CvService;
+import com.billennium.bcvsaver.service.impl.CvServiceImpl;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,8 +11,8 @@ import javax.annotation.Resource;
 @RequestMapping(value = "/api/cvs")
 @ResponseStatus(HttpStatus.OK)
 public class CvController {
-    @Resource(name="cvService")
-    private CvService cvService;
+    @Resource(name= "cvServiceImpl")
+    private CvServiceImpl cvService;
 
     @PostMapping("/addCv")
     @ResponseStatus(HttpStatus.OK)
