@@ -22,15 +22,15 @@ public class CertificateServiceImpl implements CertificateService {
         this.certificateRepository = certificateRepository;
     }
 
-    private Certificate addCertificate(CertificateDto certificateDto) {
-        return certificateRepository.save(CertificateAsm.makeCertificate(certificateDto));
-    }
-
     public List<Certificate> addCertificates(List<CertificateDto> certificateDtos) {
         return Optional.ofNullable(certificateDtos).orElse(List.of())
                 .stream()
                 .filter(Objects::nonNull)
                 .map(this::addCertificate)
                 .collect(Collectors.toList());
+    }
+
+    private Certificate addCertificate(CertificateDto certificateDto) {
+        return certificateRepository.save(CertificateAsm.makeCertificate(certificateDto));
     }
 }

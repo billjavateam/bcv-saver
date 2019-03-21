@@ -28,6 +28,7 @@ class CvServiceImplSpec extends Specification {
     @Subject
     def cvService = new CvServiceImpl(cvRepository, certificateService, educationService,
             languageService, projectService, technicalSkillService, experienceService)
+
     PodamFactory factory = new PodamFactoryImpl()
 
     def "should create cv service"() {
