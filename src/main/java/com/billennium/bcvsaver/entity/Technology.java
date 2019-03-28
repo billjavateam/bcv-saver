@@ -1,7 +1,9 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.Set;
@@ -9,6 +11,8 @@ import java.util.Set;
 @Entity(name = "technology")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Technology {
     @Id
     @Column(unique = true)
@@ -21,6 +25,7 @@ public class Technology {
             inverseJoinColumns = { @JoinColumn(name = "project_id") }
     )
     private Set<Project> projects;
+
 
     @ManyToMany(cascade = { CascadeType.ALL })
     @JoinTable(

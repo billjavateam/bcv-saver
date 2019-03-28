@@ -1,7 +1,9 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -10,6 +12,8 @@ import java.util.Set;
 @Entity(name = "technical_skill")
 @Builder
 @Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class TechnicalSkill {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

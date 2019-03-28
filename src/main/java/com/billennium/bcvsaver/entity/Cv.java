@@ -1,7 +1,9 @@
 package com.billennium.bcvsaver.entity;
 
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.util.ArrayList;
@@ -10,6 +12,8 @@ import java.util.List;
 @Entity(name = "cv")
 @Data
 @Builder
+@AllArgsConstructor
+@NoArgsConstructor
 public class Cv {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

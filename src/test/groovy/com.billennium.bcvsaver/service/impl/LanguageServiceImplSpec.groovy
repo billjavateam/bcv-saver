@@ -4,6 +4,7 @@ import com.billennium.bcvsaver.dto.LanguageDto
 import com.billennium.bcvsaver.entity.Language
 import com.billennium.bcvsaver.repository.LanguageRepository
 import org.springframework.boot.test.context.SpringBootTest
+import resources.CommonData
 import spock.lang.Specification
 import spock.lang.Subject
 import uk.co.jemos.podam.api.PodamFactory
@@ -25,19 +26,14 @@ class LanguageServiceImplSpec extends Specification {
 
     def "should add languages"() {
         given:
-        Random random = new Random()
-        def times = random.nextInt(1000)
-        List<LanguageDto> languageDtoList = new ArrayList<>()
-        for (int i = 0; i < times; i++) {
-            languageDtoList.add(null)
-            languageDtoList.add(factory.manufacturePojo(LanguageDto.class))
-        }
+        List<LanguageDto> languageDtoList = CommonData
+                .getObjectsFromFactory(LanguageDto.class, new ArrayList<>())
         when:
         List<Language> result = languageService.addLanguages(languageDtoList)
         List<Language> emptyResult = languageService.addLanguages(null)
         then:
-        result.size() == times
-        times * languageRepository.save(_)
+        result.size() == CommonData.times
+        CommonData.times * languageRepository.save(_)
         emptyResult == List.of()
     }
 }
